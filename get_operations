@@ -1,0 +1,88 @@
+// //JavaScript Fetch
+options = {
+    method:"GET"
+};
+
+//For Verifying status of the response
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.status;
+})
+.then(function(status){
+    console.log(status);
+});
+
+//for verifying statusText
+
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.statusText;
+})
+.then(function(statusText){
+    console.log(statusText);
+});
+
+
+//headers
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.headers;
+})
+.then(function(headers){
+    console.log(headers);
+});
+
+
+//url
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.url;
+})
+.then(function(url){
+    console.log(url);
+});
+
+
+//response text
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.text();
+})
+.then(function(data){
+    console.log(data);
+});
+
+
+// Parsed Response
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.text();
+})
+.then(function(data){
+    let parsed_data = JSON.parse(data);
+
+    console.log(parsed_data);
+});
+
+//ALternate Method for parsing the data
+
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.json();
+})
+.then(function(data1){
+    console.log(data1);
+});
+
+
+
+//Parse Data of response and pinpointing a particular data
+fetch("https://gorest.co.in/public-api/users", options)
+.then(function(response){
+    return response.text();
+})
+.then(function(data){
+    let parsed_data = JSON.parse(data);
+
+    console.log(parsed_data["data"][1]["name"]);
+});
