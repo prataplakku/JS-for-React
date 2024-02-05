@@ -1,0 +1,18 @@
+let options = {
+    method:"DELETE",
+    headers: {
+        'Content-Type' : 'application/json',
+        Accept: 'application/json',
+        Authorization: 'Bearer fc5bee876ba47283d994f4fd1e37d3388a868c55c477dc217122b7fd6ed6d7ff'
+    }
+};
+
+url = "https://gorest.co.in/public-api/users/6140553";
+
+fetch(url, options)
+.then(function(response){
+    return response.json();
+})
+.then(function(status){
+    console.log(status);
+})
