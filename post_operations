@@ -1,0 +1,30 @@
+//JavaScript Fetch
+let data = {
+    name: "pratap",
+    email: "pratap@gmail.com",
+    gender: "male",
+    status: "Active"
+};
+
+options = {
+    method:"POST",
+    headers: {
+        'Content-Type' : 'application/json',
+        Accept: 'application/json',
+        Authorization: 'Bearer fc5bee876ba47283d994f4fd1e37d3388a868c55c477dc217122b7fd6ed6d7ff'
+    },
+    body: JSON.stringify(data)
+};
+
+let url = "https://gorest.co.in/public-api/users";
+
+fetch(url, options)
+.then(function(response){
+    return response.json();
+})
+.then(function(JsonDATA){
+    console.log(JsonDATA);
+});
+
+
+// id: 6140553 place where this data is posted 
